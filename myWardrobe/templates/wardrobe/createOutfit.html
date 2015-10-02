@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title %} Create Outfit {% endblock %}
+{% block staticcontent %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+{% endblock %}
+
+{% block content %} 
+<h3>Select your dresses and accesories and create your new outfit !!!</h3>
+<h2>Dresses</h2>
+<div class='pics'>
+  {% for dress in user.dresses.all %}
+  <div class='pics-container'>
+    <div class='pic-header'>
+      <div>{{ dress.category }}</div>
+      <img src=''>
+    </div>
+   <img width='150px' height='auto' src="{{dress.image.url}}" />
+  </div>
+  {% endfor %}
+</div>
+
+<hr>
+
+<h2>Accessories</h2>
+<div class='pics'>
+  {% for accessory in user.accessories.all %}
+  <div class='pics-container'>
+    <div class='pic-header'>
+      <div>{{ accessory.category }}</div>
+      <img src=''>
+    </div>
+    <img width='150px' height='auto' src="{{accessory.image.url}}" />
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+	<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+	<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+	<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+{% endblock %}
+
+

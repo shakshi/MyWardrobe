@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Home {% endblock %}
+
+{% block staticcontent %} 
+	<link rel="stylesheet" href = "{% static 'account/css/home.css' %}" type='text/css'>
+{% endblock %}
+
+{% block intro %} 
+<div class="card-panel pink lighten-5">
+<img src = "{% static 'wardrobe/images/closet-online.jpg' %}" class="materialboxed">
+<span class="purple-text text-accent-4"><h3>Organise you wardrobe virtually</h3></span>
+</div>
+
+{% endblock %}
+
+{% block info %} 
+<div class="categories">
+  <img src = "{% static 'wardrobe/images/dresses.jpg' %}" class="materialboxed  z-depth-2" data-caption="Look upon your dresses-choose,add,remove">
+  <img src = "{% static 'wardrobe/images/accessories.jpg' %}" class="materialboxed z-depth-2" data-caption="Add matching accessories to your dresses">
+  <img src = "{% static 'wardrobe/images/outfits.jpeg' %}" class="materialboxed z-depth-2" data-caption="Create outfits-combination of dresses and matching accessories and save ">
+  <img src = "{% static 'wardrobe/images/calendar.png' %}" class="materialboxed z-depth-2" data-caption="Plan what to wear with the help of calendar">
+</div>
+
+<h3> Go and Explore !!!!</h3>
+{% endblock %}
+
+{% block nav %}
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="{% url 'home' %}" class='active'>HOME</a> </li>
+        <li class="tab col s3"><a href="{% url 'dresses' %}">MY DRESSES</a> </li>
+        <li class="tab col s3"><a href="{% url 'outfits' %}">MY OUTFITS</a> </li>
+        <li class="tab col s3"><a href="{% url 'accessories' %}">MY ACCESSORIES</a> </li>
+      </ul>
+   </div>
+</div>
+	<i class="fa fa-user"></i>
+	<span>{{ user.username }}</span>
+  <div id='logout' class="btn waves-effect waves-orange"> <a href="{% url 'logout' %}">Logout</a> </div>
+{% endblock %}
+
+
+
+  

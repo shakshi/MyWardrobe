@@ -1,0 +1,18 @@
+
+function init()
+{
+	var ele=document.getElementsByClassName("sidebar")[0];
+        var accessories_list=['HandBag','Clutch','Broche','Wallet','Belt','Hat','SunGlasses','Scarf','Bracelet','Necklace','Ring','Earing','Watch','Gloves'];
+	for (var i=0;i<accessories_list.length;i++)
+	{  
+           var outerdiv=document.createElement("div")
+           var e=document.createElement("a");
+	   e.innerHTML=accessories_list[i];
+	   e.setAttribute("href","#");
+           outerdiv.appendChild(e);
+	   ele.appendChild(outerdiv);
+        }
+}
+
+
+

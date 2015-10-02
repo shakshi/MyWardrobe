@@ -1,0 +1,7 @@
+.intro
+{
+  /*background:url('wardrobe.jpg');
+  background-size: cover;*/
+  padding: 14% 10%;
+  
+}

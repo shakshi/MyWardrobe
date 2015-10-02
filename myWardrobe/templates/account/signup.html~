@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title %} Sign Up {% endblock %}
+{% block staticcontent %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+   <link rel='stylesheet' type='text/css' href='account/css/add.css'>
+{% endblock %}
+
+{% block content %} 
+<h2>Fill the form and signup</h2>
+<div>
+    <br>  
+    <form action="{% url 'home' %}" method='post'>
+      {% csrf_token %}
+      {% bootstrap_form nForm %}
+      {% buttons submit='Sign Up' %}
+      {% endbuttons %}
+    </form>
+</div>
+{% endblock %}
+
+
+

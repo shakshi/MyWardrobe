@@ -1,0 +1,31 @@
+.intro {
+    /*background: url('closet-online.jpg');*/
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 800px 523px;
+    padding: 1% 2%;
+    color: antiquewhite;
+    opacity: .87;
+    background-color: pink;
+}
+.categories{
+  @extend .blue, .lighten-4;
+  display:flex;
+  flex-wrap:wrap;
+  margin:1% 10% ;
+  padding:2%;
+  justify-content:space-between;
+  align-items:center;
+  border-radius:10px;
+}
+.info img{
+  
+  width:250px;
+  height:auto;
+  border-radius:35px;
+  
+}
+.info{
+  text-align:center;
+}
+  

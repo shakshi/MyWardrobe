@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %} 
+{% load staticfiles %}
+
+{% block title %} Accessories {% endblock %}
+
+{% block staticcontent %}
+<link rel='stylesheet' type='text/css' href="{% static 'account/css/dresses.css' %}">
+{% endblock %}
+
+
+{% block header %}
+  <div> <a href="{% url 'logout' %}">Logout</a> </div>
+{% endblock %}
+
+{% block nav %}
+
+<div> <a href="{% url 'home' %}">HOME</a> </div>
+<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+<div class='highlight'> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+<div id='add'> <a href="{% url 'addAccessory' %}">Add Accessory</a> </div>
+
+{% endblock %}
+
+
+{% block content %} 
+<h3>Hello {{ user.username }}</h3>
+<h3>Here are your accessories ...</h3>
+
+<div id='pics'>
+  {% for accessory in user.accessories.all %}
+  <div class='pics-container'>
+    <div>{{ accessory.category }}</div>
+    <img width='200px' height='auto' src="{{accessory.image.url}}" />
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+  <div>FILTER FORM</div>
+  {% endblock %}
+

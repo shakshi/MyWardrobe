@@ -1,0 +1,7 @@
+<!doctype html>
+<head>
+  <head>
+    <title> {% block title %}{% endblock %}</title>
+    {% block staticcontent %} {% endblock %}
+  </head>
+   

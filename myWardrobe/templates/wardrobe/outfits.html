@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Outfits {% endblock %}
+
+{% block nav %}
+
+<div> <a href="{% url 'home' %}">HOME</a> </div>
+<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+<div class='highlight'> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+<div id='add'> <a href="{% url 'createOutfit' %}">Create Outfit</a> </div>
+
+{% endblock %}
+
+{% block content %} 
+<h3>Hello {{ user.username }}</h3>
+<h3>Here are your outfits ...</h3>
+<div>{{ user.outfits.all }}</div>
+
+<div id='pics'>
+{% for outfit in user.outfits.all %}
+  <div>
+    <div>{{ outfit.name }}</div>
+    <div>
+       <div>{{ outfit.dress_components.all }}</div>
+       {% for dress in outfit.dress_components.all %}
+         <img width='200px' height='auto' src="{{dress.image.url}}" />
+       {% endfor %}
+       {% for accessory in outfit.accessories_needed.all %}
+         <img width='200px' height='auto' src="{{accessory.image.url}}" />
+       {% endfor %}
+
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+

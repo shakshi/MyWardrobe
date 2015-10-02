@@ -1,0 +1,7 @@
+.intro
+{
+  background:url('dresses2.jpg');
+  background-repeat:no-repeat;
+  padding: 14% 10%;
+  
+}

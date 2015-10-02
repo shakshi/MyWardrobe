@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load material_form %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block staticcontent %} 
+	<link rel="stylesheet" href = "{% static 'account/css/welcome.css' %}" type='text/css'>
+{% endblock %}
+    
+ 
+{% block nav%} 
+<a href="{% url 'signup' %}" class="btn waves-effect waves-orange">SIGN UP</a> 
+{% endblock %}
+
+{% block intro %}
+      	<h2>My Wardrobe</h2>
+	<h5>An Online Wardrobe Space to manage clothes,accessories and create outfits</h5>
+	<a href='#' class="btn waves-effect waves-orange">GET STARTED</a>
+{% endblock %}
+  
+{% block info%}
+<div class="card-panel">
+<h4>Login </h4>
+<form method="POST" action="{% url 'welcome' %}" class="col s6">
+  {% if next %}
+      <input type='hidden' name='next' value={{next}}>
+  {% endif %}
+
+  {% csrf_token %}
+  {% form form=nForm %}{% endform %}
+  <button type="submit" name="_submit" class="btn waves-effect waves-orange">Submit</button>
+</form>
+</div>
+
+{% endblock %}
+

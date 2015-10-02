@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block title %} Wardrobe's Dresses {% endblock %}
+
+{% block staticcontent %}
+<link rel='stylesheet' type='text/css' href="{% static 'account/css/dresses.css' %}">
+{% endblock %}
+
+{% block nav %}
+<div>CATEGORY</div>
+<div>OCCASION</div>
+<div>SEASON</div>
+<div id='add'> <a href="{% url 'addDress' %}">Add Dress</a> </div>
+{% endblock %}
+
+{% block content %} 
+<h3>Here are the filtered items!!</h3>
+
+<div id='pics'>
+  {% for item in list %}
+  <div class='pics-container'>
+    <img width='200px' height='auto' src="{{item.image.url}}" />
+    <div>{{ item.category }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block sidebar %}
+  <div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+  <div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+  <div> NO OF TOPS: {{ user.wardrobe.no_of_tops }}</div>
+{% endblock %}
+

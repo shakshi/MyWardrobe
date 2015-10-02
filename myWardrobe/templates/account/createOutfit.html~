@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title %} Create Outfit {% endblock %}
+{% block staticcontent %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+   <link rel='stylesheet' type='text/css' href='account/css/add.css'>
+{% endblock %}
+
+{% block content %} 
+<h1>Select your dresses and accesories and create your new outfit !!!</h1>
+<div>
+    <br>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+	<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+	<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+{% endblock %}
+
+

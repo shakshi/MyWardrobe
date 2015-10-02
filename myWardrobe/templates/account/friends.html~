@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block title %} Friends {% endblock %}
+
+{% block content %} 
+<h3>Hello {{ user.username }}</h3>
+<h3>Have a look at your friends with whom you can lend or borrow your dresses and accessories ...</h3>
+<div>{{ user.friends.all }}</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div> <a href="{% url 'wardrobe' %}">MY WARDROBE</a> </div>
+	<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+	<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+body
+{	margin:0;
+	padding:0;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+}
+.nav {
+    display:flex;
+    justify-content:flex-end;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.intro {
+    color:white;
+    text-align: center;
+}

@@ -1,0 +1,105 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block title %} Dresses {% endblock %}
+
+{% block staticcontent %}
+  <link rel='stylesheet' type='text/css' href="{% static 'account/css/dresses.css' %}">
+  <link rel="stylesheet" href = "{% static 'wardrobe/css/dresses.css' %}" type='text/css'>
+  <script src = "{% static 'account/js/dresses.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+  <div> <a href="{% url 'logout' %}">Logout</a> </div>
+{% endblock %}
+
+{% block nav %}
+
+<div> <a href="{% url 'home' %}">HOME</a> </div>
+<div class='highlight'> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+<div id='add'> <a href="{% url 'addDress' %}">Add Dress</a> </div>
+{% endblock %}
+
+{% block intro %} 
+<h3>See the dresses you have in your wardrobe-add,filter and choose!!</h3>
+<div class="container">
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{% static 'wardrobe/images/tops.jpg' %}" width="100px" height="auto">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Tops<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Tops<i class="material-icons right">close</i></span>
+      <p>No of Tops in your wardrobe:</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Lowers<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Lowers<i class="material-icons right">close</i></span>
+      <p>No of Lowers in your wardrobe:</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Single Pieces<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Single Pieces<i class="material-icons right">close</i></span>
+      <p>No of SinglePieces in your wardrobe:</p>
+    </div>
+</div>
+</div>
+            
+{% endblock %}
+
+{% block info %}
+  <div class="row tops">
+    <div id='pics'>
+      {% for dress in user.dresses.all %}
+        <div class='pics-container'>
+          <img width='200px' height='auto' src="{{dress.image.url}}" />
+          <div>{{ dress.category }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row lowers">
+  </div>
+
+  <div class="row singlePieces">
+  </div>
+
+<script>
+  window.addEventListener('load',init);
+</script>
+{% endblock %}
+
+
+
+
+
+{% block sidebar %}  
+  <div>FILTER FORM</div>
+ 
+  <br><br>
+  <div>WARDROBE STATUS:</div>
+  <div>No of Tops:</div>
+  <div>No of Lowers:</div>
+
+{% endblock %}
+

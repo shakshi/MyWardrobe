@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load material_form %}
+{% load staticfiles %}
+
+{% block title %} Sign Up {% endblock %}
+{% block staticcontent %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' type='text/css' href='account/css/add.css'>
+{% endblock %}
+
+{% block nav %}
+  <div><a href="{% url 'welcome' %}" class='btn'>Welcome Page</a></div>
+{% endblock %}
+
+{% block info %} 
+<div class="container">
+    <h2>Fill the form and signup....</h2>
+    <br>  
+    <form action="{% url 'signup' %}" method='post'>
+      {% csrf_token %}
+      {% form form=nForm %} {% endform %}
+      <button type='submit' class='btn' name='signup'>SignUp</button>
+    </form>
+
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% block title %} Dresses {% endblock %}
+
+{% block staticcontent %}
+  <link rel='stylesheet' type='text/css' href="{% static 'account/css/wardrobe.css' %}">
+  <script src = "{% static 'account/js/dresses.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+  <div> <a href="{% url 'logout' %}">Logout</a> </div>
+{% endblock %}
+
+{% block nav %}
+
+<div> <a href="{% url 'home' %}">HOME</a> </div>
+<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+<div id='add'> <a href="{% url 'addDress' %}">Add Dress</a> </div>
+{% endblock %}
+
+{% block content %} 
+<h3>Hello {{ user.username }}</h3>
+<h3>See the dresses you have in your wardrobe-add,filter and choose!!</h3>
+
+<div id='pics'>
+  {% for dress in user.dresses.all %}
+  <div class='pics-container'>
+    <img width='200px' height='auto' src="{{dress.image.url}}" />
+    <div>{{ dress.category }}</div>
+  </div>
+  {% endfor %}
+</div>
+<script>
+  window.addEventListener('load',init);
+</script>
+{% endblock %}
+
+{% block sidebar %}  
+  <div>FILTER FORM</div>
+  <form action="{% url 'wardrobe' %}" method='post'>
+      {% csrf_token %}
+      {% bootstrap_form filterForm %}
+      {% buttons submit='Submit' %}
+      {% endbuttons %}
+  </form>
+
+  <br><br>
+  <div>WARDROBE STATUS:</div>
+  <div>No of Tops:</div>
+  <div>No of Lowers:</div>
+
+{% endblock %}
+

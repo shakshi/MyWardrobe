@@ -1,0 +1,13 @@
+#pics{
+  display:flex;
+  flex-wrap:wrap;
+}
+#pics div{
+  margin:1%;
+}
+
+.pics-container {
+    color: brown;
+    background-color: gainsboro;
+    padding: 3px;
+}

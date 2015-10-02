@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% load material_form %}
+
+{% block title %} Add Accessory {% endblock %}
+{% block staticcontent %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+   <link rel='stylesheet' type='text/css' href='account/css/add.css'>
+{% endblock %}
+
+{% block content %} 
+<h1>Add an accessory to your wardrobe!!</h1>
+<div>
+    <br>
+    <form action="{% url 'addAccessory' %}" method='post' enctype='multipart/form-data'>
+      {% csrf_token %}
+      {% form form=nForm %}
+      <button type='submit' name='Add_Accessory' class='btn'>Add Accessory</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+	<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+	<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+{% endblock %}
+
+

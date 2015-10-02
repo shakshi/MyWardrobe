@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+
+{% block title %} Add Dress {% endblock %}
+{% block staticcontent %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+   <link rel='stylesheet' type='text/css' href='account/css/addItem.css'>
+{% endblock %}
+
+{% block content %} 
+<h1>Choose you dress and add it to you wardrobe!!</h1>
+<div>
+    <br>
+    <form action="{% url 'addDress' %}" method='post' enctype='multipart/form-data'>
+      {% csrf_token %}
+      {% bootstrap_form nForm %}
+      {% buttons submit='Add Dress' %}
+      {% endbuttons %}
+    </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div> <a href="{% url 'dresses' %}">MY DRESSES</a> </div>
+	<div> <a href="{% url 'outfits' %}">MY OUTFITS</a> </div>
+	<div> <a href="{% url 'accessories' %}">MY ACCESSORIES</a> </div>
+{% endblock %}
+
+

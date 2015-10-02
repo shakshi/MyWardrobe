@@ -1,0 +1,33 @@
+.division{
+  position:relative;
+}
+
+.list{
+  display:none;
+  position:absolute;
+  top:40px;
+  left:0px;
+  color: #5D0E0E;
+}
+.list div{
+  margin:7%;
+}
+.division:hover .list{
+  display:block;
+}
+  
+#pics{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+#pics div{
+  margin:1%;
+}
+
+.pics-container {
+    color:brown;
+    background-color: gainsboro;
+    padding: 3px;
+}
+
