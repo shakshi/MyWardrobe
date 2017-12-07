@@ -1,6 +1,5 @@
-# myWardrobe – 
-  web App made using DJANGO framework with following features:
-- user authentication i.e. log in and sign up
-- activate account with email confirmation
-- reset password with email confirmation 
-- can upload photos of dresses, accessories and categorize them according to      season, kind and occasion
+# Online Dress Shopping  – 
+  Shop dresses and accessories digitally 
+- you need a valid email id to start an account
+- As vendor, you can upload photos of dresses, accessories and categorize them according to season, kind and occasion
+- make interesting outfits by clubbing dresses and outfits
