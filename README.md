@@ -19,3 +19,5 @@
 <img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/forgotPassword2.png" height="200">
 <img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/forgotPssword3.png" height="200">
 
+## Create Outfits
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/createOutfit.png" height="200">
