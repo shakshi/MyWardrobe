@@ -5,10 +5,16 @@
 - make interesting outfits by clubbing dresses and outfits
 
 ## Welcome
-<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/Welcome.png" height="200" width="450">
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/Welcome.png" height="200" width="400">
 
 ## Sign Up
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/SignUp.png" height="200" width="400">
+
 
 ## Email Verification & Activate Account
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/activation%20link.png" height="200" width="400">
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/activation%20page.png" height="200" width="400">
 
 ## Forgot Password and Reset Password
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/Welcome.png" height="200" width="400">
+<img src="https://github.com/shakshi/Online-Dress-Shopping/blob/master/screenshots/Welcome.png" height="200" width="400">
